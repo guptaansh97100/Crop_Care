@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Changer</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            text-align: center;
+            padding: 60px 15px;
+            transition: 0.3s;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            padding: 30px 20px;
+            border-radius: 12px;
+            background: white;
+        }
+
+        button {
+            padding: 12px 18px;
+            margin: 8px 4px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            color: white;
+        }
+
+        #lightBtn {
+            background: #64748b;
+        }
+
+        #darkBtn {
+            background: #111827;
+        }
+
+        #blueBtn {
+            background: #2563eb;
+        }
+
+        .dark-theme {
+            background: #111827;
+            color: white;
+        }
+
+        .dark-theme .container {
+            background: #374151;
+        }
+
+        .blue-theme {
+            background: #dbeafe;
+            color: #1e3a8a;
+        }
+
+        .blue-theme .container {
+            background: #eff6ff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Theme Changer</h1>
+        <p>Select your preferred color theme.</p>
+
+        <button id="lightBtn">Light Theme</button>
+        <button id="darkBtn">Dark Theme</button>
+        <button id="blueBtn">Blue Theme</button>
+    </div>
+
+    <script>
+        const body = document.body;
+
+        document.getElementById("lightBtn").addEventListener("click", function() {
+            body.classList.remove("dark-theme", "blue-theme");
+        });
+
+        document.getElementById("darkBtn").addEventListener("click", function() {
+            body.classList.remove("blue-theme");
+            body.classList.add("dark-theme");
+        });
+
+        document.getElementById("blueBtn").addEventListener("click", function() {
+            body.classList.remove("dark-theme");
+            body.classList.add("blue-theme");
+        });
+    </script>
+</body>
+</html>
